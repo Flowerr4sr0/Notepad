@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notepad</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Notepad</h2>
+
+  <!-- Google Sign In button -->
+  <div id="g_id_onload"
+       data-client_id="877829564237-m9tchof6p2vfee0l2n8bjme9dh8os6ih.apps.googleusercontent.com"
+       data-callback="onSignIn">
+  </div>
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <div id="app">
+    <p>Signed in as: <span id="user"></span></p>
+    <textarea id="note" placeholder="Write your note here..."></textarea><br>
+    <button class="btn" onclick="showCaptcha()">Save</button>
+
+    <div id="captchaBox">
+      <div class="g-recaptcha"
+           data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+           data-callback="onCaptchaSuccess"></div>
+    </div>
+
+    <div id="files">
+      <h3>Pretend Files</h3>
+      <div id="fileList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
